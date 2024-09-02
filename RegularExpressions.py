@@ -1,8 +1,9 @@
 import re
 from Token import Token
 
-def intConst(word):
-    pattern = "(^[+|-]?[0-9]+$)"
+def numberConst(word):
+    # This pattern matches both integers and floats
+    pattern = r"^[+-]?(\d+(\.\d*)?|\.\d+)$"
     matchPattern = re.match(pattern, word)
 
     if matchPattern:
@@ -11,26 +12,9 @@ def intConst(word):
         return False
 
 
-def floatConst(word):
-    pattern = "(^[+|-]?[0-9]*[.][0-9]+$)"
-    matchPattern = re.match(pattern, word)
-
-    if matchPattern:
-        return True
-    else:
-        return False
-
-def charConst(word):
-    pattern = "(\'[\\sA-Za-z0-9-!@$#%^&*()+=;:<>,.?/{}[\]|]\')"
-    matchPattern = re.match(pattern, word)
-
-    if matchPattern:
-        return True
-    else:
-        return False
-    
-def stringConst(word):
-    pattern = "(\"(.*)\")"
+def textConst(word):
+    # This pattern matches both single characters and strings
+    pattern = r"(^'[\\sA-Za-z0-9-!@$#%^&*()+=;:<>,.?/{}[\]|]'$)|(^\".*\"$)"
     matchPattern = re.match(pattern, word)
 
     if matchPattern:

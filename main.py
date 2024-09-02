@@ -1,20 +1,17 @@
 
 
-from readSourceCode import readSourceCode
-from wordBreaker import breakWords
-from classifyToken import classifyToken
-
-
-print("helllloooo")
+from ReadInput import readInput
+from WordBreakers import word_breakers
+from LanguageSpecsForToken import language_specs_for_token
 
 input_file_path = "/Users/emaantahirkhan/Desktop/Compiler-Construction/input.x"
 output_file_path = "/Users/emaantahirkhan/Desktop/Compiler-Construction/output.x"
 
-sourceCode = readSourceCode(input_file_path)
+sourceCode = readInput(input_file_path)
 
 if sourceCode is not None:
-    breakedWords = breakWords(sourceCode)
-    classifiedToken = classifyToken(breakedWords)
+    breakedWords = word_breakers(sourceCode)
+    classifiedToken = language_specs_for_token(breakedWords)
 
     # Writing the lexical output to the output file
     try:

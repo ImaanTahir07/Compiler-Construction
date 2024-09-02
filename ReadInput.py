@@ -1,4 +1,4 @@
-def readSourceCode(input_file_path):
+def readInput(input_file_path):
     try:
         with open(input_file_path, 'r') as sourceCode:
             return sourceCode.read()
