@@ -121,7 +121,7 @@ blueprint Person {
     declare text name;
     declare number age;
 
-    constructor(text name, number age) {
+    initializer(text name, number age) {
         self.name = name;
         self.age = age;
     }
